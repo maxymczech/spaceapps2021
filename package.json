@@ -1,0 +1,11 @@
+{
+  "name": "mooncollab.co",
+  "version": "1.0.0",
+  "description": "Entry for NASA Space Apps 2021 hackaton",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Maksym Shcherban, Olena Demchenko",
+  "license": "ISC"
+}
