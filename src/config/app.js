@@ -3,6 +3,14 @@
 export default {
   // Application config
   app: {
+    flightControlPositions: {
+      'CAPCOM': 'Capsule Communicator',
+      'EVA': 'Extravehicular Activity',
+      'FD': 'Flight Director',
+      'FOD': 'Flight Operations Directorate',
+      'FS': 'Flight Surgeon',
+      'PAO': 'Public Affairs Office'
+    }
   },
 
   // Firebase config

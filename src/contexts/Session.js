@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { doc, getFirestore, onSnapshot } from "firebase/firestore";
 import {
   getAuth,
   onAuthStateChanged,
@@ -10,6 +11,7 @@ const SessionContext = React.createContext();
 
 const SessionProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [userDetails, setUserDetails] = useState(null);
 
   useEffect(() => {
     const auth = getAuth();
@@ -17,10 +19,19 @@ const SessionProvider = ({ children }) => {
       setUser(user);
     });
 
+    let detailUnsubscribe = null;
+    if (user?.uid) {
+      const db = getFirestore();
+      detailUnsubscribe = onSnapshot(doc(db, "users", user.uid), doc => {
+        setUserDetails(doc.data());
+      });
+    }
+
     return () => {
       authUnsubscribe?.();
+      detailUnsubscribe?.();
     }
-  }, []);
+  }, [user]);
 
 
   const signIn = (email, password, setErrorText) => {
@@ -44,7 +55,8 @@ const SessionProvider = ({ children }) => {
   const sessionState = {
     signIn,
     signOut,
-    user
+    user,
+    userDetails
   };
 
   return (

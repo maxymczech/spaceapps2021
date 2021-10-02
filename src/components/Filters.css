@@ -1,0 +1,12 @@
+.ReactTags__selected {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ReactTags__tagInput {
+  flex-grow: 1;
+}
+
+.ReactTags__tagInputField {
+  width: 100%;
+}
