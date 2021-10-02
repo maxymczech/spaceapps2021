@@ -1,3 +1,4 @@
+import './SignIn.css';
 import React, { useContext, useState } from 'react';
 import { SessionContext } from '../contexts/Session';
 
@@ -15,35 +16,37 @@ export default function() {
   };
 
   return <>
-    <form onSubmit={handleSubmit}>
-      <div className="form-row">
-        <label htmlFor="user-email">Email:</label>
-        <input
-          autoComplete="on"
-          id="user-email"
-          onChange={e => setUserEmail(e.target.value)}
-          type="email"
-          value={userEmail}
-        />
-      </div>
-      <div className="form-row">
-        <label htmlFor="user-password">Password:</label>
-        <input
-          autoComplete="on"
-          id="user-password"
-          onChange={e => setUserPassword(e.target.value)}
-          type="password"
-          value={userPassword}
-        />
-      </div>
-      <div className="form-submit">
-        <button type="submit">Sign In</button>
-      </div>
-      {errorText && (
-        <div className="error-text">
-          {errorText}
+    <div className="screen-sign-in">
+      <form onSubmit={handleSubmit}>
+        <div className="form-row">
+          <label htmlFor="user-email">Email:</label>
+          <input
+            autoComplete="on"
+            id="user-email"
+            onChange={e => setUserEmail(e.target.value)}
+            type="email"
+            value={userEmail}
+          />
         </div>
-      )}
-    </form>
+        <div className="form-row">
+          <label htmlFor="user-password">Password:</label>
+          <input
+            autoComplete="on"
+            id="user-password"
+            onChange={e => setUserPassword(e.target.value)}
+            type="password"
+            value={userPassword}
+          />
+        </div>
+        <div className="form-submit">
+          <button type="submit">Sign In</button>
+        </div>
+        {errorText && (
+          <div className="error-text">
+            {errorText}
+          </div>
+        )}
+      </form>
+    </div>
   </>;
 }
