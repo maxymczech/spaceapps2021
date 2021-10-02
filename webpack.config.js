@@ -50,7 +50,8 @@ module.exports = {
       patterns: [{
         from: 'public/style.css'
       }, {
-        from: 'public/images'
+        from: 'public/images',
+        to: 'images'
       }]
     }),
     // new webpack.ProvidePlugin({
