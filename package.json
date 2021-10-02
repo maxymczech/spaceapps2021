@@ -4,8 +4,30 @@
   "description": "Entry for NASA Space Apps 2021 hackaton",
   "main": "index.js",
   "scripts": {
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Maksym Shcherban, Olena Demchenko",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "copy-webpack-plugin": "^9.0.1",
+    "firebase": "^9.1.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^6.3.0",
+    "dotenv": "^10.0.0",
+    "html-webpack-plugin": "^5.3.2",
+    "style-loader": "^3.3.0",
+    "webpack": "^5.56.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.3.0"
+  }
 }
