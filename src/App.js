@@ -1,5 +1,6 @@
-import "./App.css";
-import React from "react";
+import './App.css';
+import React from 'react';
+import config from './config/app';
 
 export default function() {
   return (

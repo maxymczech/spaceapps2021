@@ -1,7 +1,7 @@
 {
   "name": "mooncollab.co",
   "version": "1.0.0",
-  "description": "Entry for NASA Space Apps 2021 hackaton",
+  "description": "Entry for NASA Space Apps 2021 hackathon",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
@@ -11,10 +11,10 @@
   "author": "Maksym Shcherban, Olena Demchenko",
   "license": "ISC",
   "dependencies": {
-    "copy-webpack-plugin": "^9.0.1",
     "firebase": "^9.1.1",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "regenerator-runtime": "^0.13.9"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.7",
@@ -22,6 +22,7 @@
     "@babel/preset-env": "^7.15.6",
     "@babel/preset-react": "^7.14.5",
     "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^9.0.1",
     "css-loader": "^6.3.0",
     "dotenv": "^10.0.0",
     "html-webpack-plugin": "^5.3.2",
