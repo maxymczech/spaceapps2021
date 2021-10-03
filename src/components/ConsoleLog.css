@@ -4,6 +4,7 @@
   flex-grow: 1;
   height: 100%;
   justify-content: flex-end;
+  min-height: 200px;
   overflow: hidden;
 }
 

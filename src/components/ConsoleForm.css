@@ -1,11 +1,13 @@
 .console-form-rest {
-  height: 0;
-  overflow: hidden;
-  transition: height .3s;
+  display: none;
 }
 
 .console-form-rest.expanded {
-  height: auto;
+  display: block;
+}
+
+.console-form-rest.expanded .form-row {
+  margin-bottom: 10px;
 }
 
 .console-form textarea {

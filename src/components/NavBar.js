@@ -8,10 +8,17 @@ export default function() {
   const { signOut, user, userDetails } = useContext(SessionContext);
   const [showSettings, setShowSettings] = useState(false);
 
+  const iconImage = userDetails?.position && `./images/${userDetails.position.toLowerCase()}.png`;
+
   return (
     <>
       <div className="nav-bar">
         {userDetails?.name && <div className="nav-bar-item user-name">
+          {iconImage && <img
+            alt={userDetails?.position}
+            className="nav-bar-icon"
+            src={iconImage}
+          />}
           <span className="user-info-label">Name:</span>
           {' '}
           {userDetails.name}

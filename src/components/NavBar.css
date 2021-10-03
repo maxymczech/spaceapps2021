@@ -36,3 +36,20 @@
   font-size: 18px;
   margin-right: 8px;
 }
+
+.nav-bar-item {
+  position: relative;
+}
+
+.nav-bar-icon {
+  border: 2px solid #fff;
+  border-radius: 50%;
+  left: 0;
+  position: absolute;
+  top: calc(50% - 20px);
+  width: 40px;
+}
+
+.nav-bar-icon + * {
+  padding-left: 55px;
+}
