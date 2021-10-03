@@ -1,0 +1,9 @@
+.console-log-item {
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.console-log-item + .console-log-item {
+  margin-top: 15px;
+}
