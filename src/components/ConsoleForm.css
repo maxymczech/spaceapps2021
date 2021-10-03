@@ -15,7 +15,7 @@
   min-width: 8em;
 }
 .console-form-rest.expanded input:not(.ReactTags__tagInputField) {
-  border: 1px solid #2e3192;
+  border: 1px solid #c4c4da;
   border-radius: 6px; 
   width: 100%;
   outline: none;
@@ -23,7 +23,7 @@
 
 .console-form textarea {
   width: 100%;
-  border: 1px solid #2e3192;
+  border: 1px solid #c4c4da;
   border-radius: 6px;
   padding: 10px;
   outline: none;

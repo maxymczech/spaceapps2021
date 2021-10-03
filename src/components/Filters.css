@@ -1,5 +1,6 @@
 .console-filter {
   width: 100%;
+  background-color: white;
 }
 
 .ReactTags__tags {
@@ -61,4 +62,7 @@
 }
 .ReactTags__remove:hover {
   opacity: 0.6;
+}
+.console-filter .ReactTags__tags {
+  border: 1px solid #c4c4da;
 }
