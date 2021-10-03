@@ -2,7 +2,11 @@ import './Filters.css';
 import React, { useEffect, useState } from 'react';
 import { WithContext as ReactTags } from 'react-tag-input';
 
-export default function({ onTagsChange, textExplanation = '' }) {
+export default function({
+  onTagsChange,
+  propagateClearTags,
+  textExplanation = ''
+}) {
   const [tags, setTags] = useState([]);
   const [suggestions, setSuggestions] = useState([]);
 
@@ -13,6 +17,13 @@ export default function({ onTagsChange, textExplanation = '' }) {
   const handleDelete = i => {
     setTags(tags => tags.filter((tag, index) => index !== i));
   }
+
+  const clearTags = () => {
+    setTags([]);
+  }
+  useEffect(() => {
+    propagateClearTags?.(clearTags);
+  }, []);
 
   useEffect(() => {
     onTagsChange?.(tags);
