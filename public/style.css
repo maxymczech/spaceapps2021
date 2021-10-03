@@ -13,6 +13,16 @@ body {
   font-family: 'Titillium Web', sans-serif;
 }
 
+body::before {
+  background-image: url(./images/background.jpg);
+  content: '';
+  height: 1px;
+  left: -10px;
+  position: absolute;
+  top: -10px;
+  width: 1px;
+}
+
 .error-text {
   color: red;
 }
