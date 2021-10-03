@@ -47,29 +47,31 @@ export default function({ item }) {
 
   return (
     <div className="console-log-item">
-      <div className={authorClassName}>
-        {userName && <div className="console-log-item-name">
-          {iconImage && <img
-            alt={itemData?.position}
-            className="console-log-item-icon"
-            src={iconImage}
-          />}
-          <span>Name:</span>
-          {' '}
-          {userName}
-        </div>}
-        {itemData?.consoleSeat && <div className="console-log-item-console-seat">
-          <span>Console Seat:</span>
-          {' '}
-          {itemData?.consoleSeat}
-        </div>}
-        {itemData?.position && <div className="console-log-item-position">
-          <span>Flight Control Position:</span>
-          {' '}
-          {itemData?.position}
-        </div>}
-      </div>
       <div className="console-log-item-date">{dateString}</div>
+      <div className={authorClassName}>
+        {iconImage && <img
+          alt={itemData?.position}
+          className="console-log-item-icon"
+          src={iconImage}
+        />}
+        <div>
+          {userName && <div className="console-log-item-name">
+            {' '}
+            {userName}
+          </div>}        
+          {itemData?.consoleSeat && <span className="console-log-item-console-seat">
+            <span>Console Seat:</span>
+            {' '}
+            {itemData?.consoleSeat}
+          </span>}
+          {itemData?.position && <span className="console-log-item-position">
+            <span>Flight Control Position:</span>
+            {' '}
+            {itemData?.position}
+          </span>}
+        </div>
+      </div>
+      
       <div className="console-log-item-description">{itemData?.description}</div>
       <div className="console-log-item-details">
         {itemData?.entryTopic && <div className="console-log-item-detail">

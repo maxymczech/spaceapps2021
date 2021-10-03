@@ -70,7 +70,7 @@ export default function({ item = null }) {
             onChange={e => setDescription(e.target.value)}
             onFocus={() => setExpanded(true)}
             placeholder="Start typing your log"
-            rows="4"
+            rows="6"
             type="text"
             value={description}
           />

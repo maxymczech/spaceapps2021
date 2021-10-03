@@ -1,9 +1,108 @@
 .console-log-item {
-  background-color: #f0f0f0;
+  background-color: whitesmoke;
   padding: 15px;
   border-radius: 10px;
+  position: relative;
 }
 
-.console-log-item + .console-log-item {
-  margin-top: 15px;
+.console-log-item {
+  margin-top: 45px;
+}
+.console-log-item-icon {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+.console-log-item-name {
+  font-weight: 700;
+}
+.console-log-item-author {
+  display: flex;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed #2e3192;
+  margin-bottom: 20px;
+}
+.console-log-item-console-seat {
+  margin-right: 50px;
+}
+.console-log-item-date {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  padding: 5px 15px 8px;
+  background-color: whitesmoke;
+  border-radius: 6px 6px 0 0;
+  font-weight: 600;
+  font-size: 17px;
+}
+.console-log-item-approved {
+  font-style: italic;
+  text-align: right;
+  color: grey;
+  font-size: 14px;
+}
+.console-log-item-description {
+  margin-bottom: 15px;
+}
+.console-log-item-detail {
+  margin-bottom: 10px;
+}
+.console-log-item-detail span{
+  font-weight: 600;
+}
+.console-log-item-buttons button:first-child {
+  border: none;
+  border: 1x solid #2e3192;
+  background-color: #2e3192;
+  color: white;
+  border-radius: 6px;
+  padding: 5px 25px;
+  margin-right: 20px;
+  font-weight: 500;
+  transition: 0.3s;
+  font-size: 17px;
+  cursor: pointer;
+}
+.console-log-item-buttons button:first-child:hover {
+  background-color: white;
+  color: #2e3192;
+  border: 1x solid #2e3192;
+}
+.console-log-item-buttons button:nth-child(2) {
+  border: none;
+  border: 1x solid #9e0b0f;
+  background-color: #9e0b0f;
+  color: white;
+  border-radius: 6px;
+  padding: 5px 25px;
+  margin-right: 20px;
+  font-weight: 500;
+  transition: 0.3s;
+  font-size: 17px;
+  cursor: pointer;
+}
+.console-log-item-buttons button:nth-child(2):hover {
+   background-color: white;
+   color: #9e0b0f;
+   border: 1x solid #9e0b0f;
+ }
+ .console-log-item-buttons button:last-child {
+  border: none;
+  border: 1x solid #00a651;
+  background-color: #00a651;
+  color: white;
+  border-radius: 6px;
+  padding: 5px 25px;
+  margin-right: 20px;
+  font-weight: 500;
+  transition: 0.3s;
+  font-size: 17px;
+  cursor: pointer;
+}
+.console-log-item-buttons button:last-child:hover {
+  background-color: white;
+  color: #00a651;
+  border: 1x solid #00a651;
 }
