@@ -1,0 +1,17 @@
+.console-form-rest {
+  height: 0;
+  overflow: hidden;
+  transition: height .3s;
+}
+
+.console-form-rest.expanded {
+  height: auto;
+}
+
+.console-form textarea {
+  width: 100%;
+}
+
+.console-filter {
+  width: 100%;
+}

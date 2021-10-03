@@ -85,16 +85,16 @@ export default function({ onClose }) {
           <h2>User Settings</h2>
           <div className="form-row">
             <label htmlFor="fontsize">Font size:</label>
-            <select name="fontsize">
-              <option value="f1" selected>normal</option>
+            <select>
+              <option value="f1">normal</option>
               <option value="f2">smaller</option>
               <option value="f3">larger</option>
             </select>
           </div>
           <div className="form-row">
             <label htmlFor="themesettings">Theme settings:</label>
-            <select name="themesettings">
-              <option value="f1" selected>light</option>
+            <select>
+              <option value="f1">light</option>
               <option value="f2">dark</option>
             </select>
           </div>

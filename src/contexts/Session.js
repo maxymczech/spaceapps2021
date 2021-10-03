@@ -12,6 +12,7 @@ const SessionContext = React.createContext();
 const SessionProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [userDetails, setUserDetails] = useState(null);
+  const [userRef, setUserRef] = useState(null);
 
   useEffect(() => {
     const auth = getAuth();
@@ -24,6 +25,7 @@ const SessionProvider = ({ children }) => {
       const db = getFirestore();
       detailUnsubscribe = onSnapshot(doc(db, "users", user.uid), doc => {
         setUserDetails(doc.data());
+        setUserRef(doc.ref);
       });
     }
 
@@ -56,7 +58,8 @@ const SessionProvider = ({ children }) => {
     signIn,
     signOut,
     user,
-    userDetails
+    userDetails,
+    userRef
   };
 
   return (

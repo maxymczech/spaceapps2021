@@ -1,14 +1,14 @@
 import './Main.css';
 import React, { useCallback, useEffect, useState } from 'react';
-import { collection, limit, onSnapshot, orderBy, query } from 'firebase/firestore';
+import { collection, getFirestore, limit, onSnapshot, orderBy, query } from 'firebase/firestore';
 import ConsoleForm from '../components/ConsoleForm';
 import ConsoleLog from '../components/ConsoleLog';
 import Filters from '../components/Filters';
 import NavBar from '../components/NavBar';
-import { getFirestore } from 'firebase/firestore'
 
 export default function() {
   const [logs, setLogs] = useState([]);
+  const [tags, setTags] = useState([]);
 
   useEffect(() => {
     const db = getFirestore();
@@ -38,14 +38,14 @@ export default function() {
   }, []);
 
   const onTagsChange = useCallback(tags => {
-    console.log('onTagsChange', tags);
+    setTags(tags);
   }, []);
   
   return (
     <>
       <div className="screen-main">
         <NavBar />
-        <Filters />
+        <Filters onTagsChange={onTagsChange} />
         <ConsoleLog logs={logs} />
         <ConsoleForm />
       </div>
