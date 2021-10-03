@@ -119,4 +119,6 @@ body {
   font-size: 0.75em;
   color: #aaa;
   margin-left: 5px;
+  padding: 5px 0;
+  box-shadow: -5px 9px 11px -13px rgba(0,0,0,0.4);
 }

@@ -1,6 +1,7 @@
 .console-filter {
   width: 100%;
   background-color: white;
+  z-index: 100;
 }
 
 .ReactTags__tags {
