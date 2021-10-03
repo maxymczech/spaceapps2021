@@ -1,13 +1,15 @@
 import './Main.css';
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
 import { collection, getFirestore, limit, onSnapshot, orderBy, query, where } from 'firebase/firestore';
 import ConsoleForm from '../components/ConsoleForm';
 import ConsoleLog from '../components/ConsoleLog';
 import Filters from '../components/Filters';
 import NavBar from '../components/NavBar';
+import { SessionContext } from '../contexts/Session';
 import scrollLogToBottom from '../utils/scroll-log-to-bottom';
 
-export default function() {
+export default function({ signInFunc }) {
+  const { user } = useContext(SessionContext);
   const [logs, setLogs] = useState([]);
   const [tags, setTags] = useState([]);
 
@@ -90,7 +92,9 @@ export default function() {
   return (
     <>
       <div className="screen-main">
-        <NavBar />
+        <NavBar
+          signInFunc={signInFunc}
+        />
         <div className="screen-main-columns">
           <div className="screen-main-content">
             <Filters
@@ -99,9 +103,9 @@ export default function() {
             />
             <ConsoleLog logs={logs} />
           </div>
-          <div className="screen-main-sidebar">
+          {user && <div className="screen-main-sidebar">
             <ConsoleForm />
-          </div>
+          </div>}
         </div>
       </div>
     </>

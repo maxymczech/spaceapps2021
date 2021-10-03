@@ -4,7 +4,7 @@ import { SessionContext } from '../contexts/Session';
 import UserSettings from './UserSettings';
 import config from '../config/app';
 
-export default function() {
+export default function({ signInFunc }) {
   const { signOut, user, userDetails } = useContext(SessionContext);
   const [showSettings, setShowSettings] = useState(false);
 
@@ -41,13 +41,20 @@ export default function() {
         >
           Settings
         </button>}
-        <button
+        {user && <button
           className="btn-sign-out"
           onClick={signOut}
           type="button"
         >
           Sign&nbsp;Out
-        </button>
+        </button>}
+        {!user && <button
+          className="btn-sign-out"
+          onClick={() => signInFunc?.()}
+          type="button"
+        >
+          Sign&nbsp;In
+        </button>}
       </div>
       <div className="nav-bar-instead"></div>
       {showSettings && (

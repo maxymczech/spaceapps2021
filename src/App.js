@@ -10,6 +10,7 @@ import { initializeApp } from "firebase/app";
 
 export default function() {
   const [loading, setLoading] = useState(true);
+  const [signIn, setSignIn] = useState(false);
   const [signedIn, setSignedIn] = useState(false);
 
   useEffect(() => {
@@ -30,7 +31,9 @@ export default function() {
 
   return loading ? <LoadingScreen /> : (
     <SessionProvider>
-      {signedIn ? <MainScreen /> : <SignInScreen />}
+      {signIn && !signedIn ? <SignInScreen /> : <MainScreen
+        signInFunc={() => setSignIn(true)}
+      />}
     </SessionProvider>
   );
 }
