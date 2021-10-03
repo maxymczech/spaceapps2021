@@ -1,6 +1,6 @@
 import './Main.css';
 import React, { useCallback, useEffect, useState } from 'react';
-import { collection, getFirestore, limit, onSnapshot, orderBy, query } from 'firebase/firestore';
+import { collection, getFirestore, limit, onSnapshot, orderBy, query, where } from 'firebase/firestore';
 import ConsoleForm from '../components/ConsoleForm';
 import ConsoleLog from '../components/ConsoleLog';
 import Filters from '../components/Filters';
@@ -14,12 +14,50 @@ export default function() {
   useEffect(() => {
     const db = getFirestore();
 
-    // TODO: apply filters
-    const q = query(
-      collection(db, 'logs'),
-      orderBy('dateCreated', 'asc'),
-      limit(100)
-    );
+    const queryParts = [collection(db, 'logs')];
+    let tagsAdded = false;
+    tags?.forEach?.(tag => {
+      // TODO: author
+
+      if (tag?.text.indexOf('console:') === 0) {
+        const consoleSeat = tag.text.substr(8);
+        queryParts.push(where('consoleSeat', '==', consoleSeat));
+        tagsAdded = true;
+      }
+
+      if (tag?.text.indexOf('topic:') === 0) {
+        const entryTopic = tag.text.substr(6);
+        queryParts.push(where('entryTopic', '==', entryTopic));
+        tagsAdded = true;
+      }
+
+      if (tag?.text.indexOf('hardware:') === 0) {
+        const hardwareUsed = tag.text.substr(9);
+        queryParts.push(where('hardwareUsed', '==', hardwareUsed));
+        tagsAdded = true;
+      }
+
+      if (tag?.text.indexOf('sample:') === 0) {
+        const sampleType = tag.text.substr(7);
+        queryParts.push(where('sampleType', '==', sampleType));
+        tagsAdded = true;
+      }
+
+      if (tag?.text.indexOf('tag:') === 0) {
+        const searchTag = tag.text.substr(4);
+        queryParts.push(where('tags', 'array-contains-any', [searchTag]));
+        tagsAdded = true;
+        console.log(searchTag);
+      }
+    });
+
+    // TODO: add indices
+    if (!tagsAdded) {
+      queryParts.push(orderBy('dateCreated', 'asc'));
+    }
+
+    queryParts.push(limit(100));
+    const q = query(...queryParts);
 
     const unsubscribe = onSnapshot(q, querySnapshot => {
       const logs = [];
@@ -37,7 +75,7 @@ export default function() {
     return () => {
       unsubscribe?.();
     }
-  }, []);
+  }, [tags]);
 
   const onTagsChange = useCallback(tags => {
     setTags(tags);
@@ -50,8 +88,8 @@ export default function() {
         <div className="screen-main-columns">
           <div className="screen-main-content">
             <Filters
-              textExplanation="Available filters: author, console, topic, hardware, sample, tag. For example, filter by &quot;hardware:hammer&quot;"
               onTagsChange={onTagsChange}
+              textExplanation="Available filters: console, topic, hardware, sample, tag. For example, filter by &quot;hardware:hammer&quot;"
             />
             <ConsoleLog logs={logs} />
           </div>
