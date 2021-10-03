@@ -18,6 +18,18 @@
   background-size: contain;
   content: '';
   display: block;
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: 200px;
+  margin-bottom: 50px;
+  margin-left: 10px;
+  position: absolute;
+  top: 50px;
+  left: calc(50% - 100px);
+}
+
+.screen-sign-in form {
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 18px;
+  padding: 35px 20px;
+  border-radius: 20px;
 }

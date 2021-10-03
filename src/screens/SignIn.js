@@ -39,7 +39,7 @@ export default function() {
           />
         </div>
         <div className="form-submit">
-          <button type="submit">Sign In</button>
+          <button type="submit">Log in</button>
         </div>
         {errorText && (
           <div className="error-text">

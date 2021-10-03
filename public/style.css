@@ -10,6 +10,7 @@ html {
 body {
   margin: 0;
   padding: 0;
+  font-family: 'Titillium Web', sans-serif;
 }
 
 .error-text {
@@ -48,4 +49,38 @@ body {
 
 .flex-grow {
   flex-grow: 1;
+}
+
+.form-row {
+  align-items: flex-start;
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.form-row label {
+  min-width: 5em;
+}
+.form-row input {
+  border-radius: 6px;
+  padding: 7px 9px;
+  border: none;
+  font-size: 14px;
+}
+.form-submit button {
+  padding: 9px 10px;
+  border-radius: 6px;
+  background-color: #2e3192;
+  border: 1px solid #2e3192;
+  color: white;
+  width: 100%;
+  font-weight: 500;
+  transition: 0.3s;
+  font-size: 17px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.form-submit button:hover {
+  padding: 9px 10px;
+  background-color: white;
+  color: #2e3192;
 }
