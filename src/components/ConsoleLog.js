@@ -5,12 +5,14 @@ import ConsoleLogItem from './ConsoleLogItem';
 export default function({ logs = [] }) {
   return (
     <div className="console-log">
-      {logs.map(item => (
-        <ConsoleLogItem
-          key={item.id}
-          item={item}
-        />
-      ))}
+      <div className="console-log-in">
+        {logs.map(item => (
+          <ConsoleLogItem
+            key={item.id}
+            item={item}
+          />
+        ))}
+      </div>
     </div>
   );
 }

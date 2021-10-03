@@ -1,5 +1,7 @@
+import './Main.css';
 import React, { useCallback, useEffect, useState } from 'react';
 import { collection, limit, onSnapshot, orderBy, query } from 'firebase/firestore';
+import ConsoleForm from '../components/ConsoleForm';
 import ConsoleLog from '../components/ConsoleLog';
 import Filters from '../components/Filters';
 import NavBar from '../components/NavBar';
@@ -10,13 +12,15 @@ export default function() {
 
   useEffect(() => {
     const db = getFirestore();
+
     // TODO: apply filters
     const q = query(
       collection(db, 'logs'),
       orderBy('dateCreated', 'asc'),
       limit(100)
     );
-    const unsub = onSnapshot(q, querySnapshot => {
+
+    const unsubscribe = onSnapshot(q, querySnapshot => {
       const logs = [];
       querySnapshot.forEach((doc) => {
         logs.push({
@@ -27,6 +31,10 @@ export default function() {
       });
       setLogs(logs);
     });
+
+    return () => {
+      unsubscribe?.();
+    }
   }, []);
 
   const onTagsChange = useCallback(tags => {
@@ -39,7 +47,7 @@ export default function() {
         <NavBar />
         <Filters />
         <ConsoleLog logs={logs} />
-        
+        <ConsoleForm />
       </div>
     </>
   );
