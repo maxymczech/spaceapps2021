@@ -94,8 +94,16 @@ export default function({ onClose }) {
           <div className="form-row">
             <label htmlFor="themesettings">Theme settings:</label>
             <select>
-              <option value="f1">light</option>
-              <option value="f2">dark</option>
+              <option value="t1">light</option>
+              <option value="t2">dark</option>
+            </select>
+          </div>
+          <div className="form-row">
+            <label htmlFor="layout">Layout:</label>
+            <select>
+              <option value="l1">Main feed</option>
+              <option value="l2">Personal log</option>
+              <option value="l3">Split</option>
             </select>
           </div>
           <div className="form-submit">

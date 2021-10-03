@@ -40,6 +40,7 @@ body {
   width: 500px;
   z-index: 110;
   padding: 8px 30px 35px;
+  overflow-y: auto;
 }
 
 .modal .btn-close {
@@ -117,4 +118,5 @@ body {
 .text-explanation {
   font-size: 0.75em;
   color: #aaa;
+  margin-left: 5px;
 }

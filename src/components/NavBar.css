@@ -26,6 +26,12 @@
   font-size: 15px;
   width: 100px;
   cursor: pointer;
+  transition: all 0.3s;
+}
+
+.nav-bar .btn-user-settings:hover,
+.nav-bar .btn-sign-out:hover {
+  background-color: #e2e2eb;
 }
 
 .nav-bar-item {

@@ -57,6 +57,7 @@
   top: 0;
   cursor: pointer;
   transition: all 0.3s;
+  outline: none;
 }
 .ReactTags__remove:hover {
   opacity: 0.6;

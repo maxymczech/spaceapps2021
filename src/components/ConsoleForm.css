@@ -7,9 +7,29 @@
 }
 
 .console-form-rest.expanded .form-row {
-  margin-bottom: 10px;
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+.console-form-rest.expanded label {
+  min-width: 8em;
+}
+.console-form-rest.expanded input:not(.ReactTags__tagInputField) {
+  border: 1px solid #2e3192;
+  border-radius: 6px; 
+  width: 100%;
+  outline: none;
 }
 
 .console-form textarea {
+  width: 100%;
+  border: 1px solid #2e3192;
+  border-radius: 6px;
+  padding: 10px;
+  outline: none;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.console-form-item {
   width: 100%;
 }
