@@ -50,6 +50,10 @@ module.exports = {
       patterns: [{
         from: 'public/style.css'
       }, {
+        from: 'public/favicon.ico'
+      }, {
+        from: 'public/favicon.png'
+      }, {
         from: 'public/images',
         to: 'images'
       }]
