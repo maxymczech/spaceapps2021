@@ -14,6 +14,11 @@ export default function({ item = null }) {
   const [hardwareUsed, setHardwareUsed] = useState(item?.hardwareUsed ?? '');
   const [sampleType, setSampleType] = useState(item?.hardwareUsed ?? '');
   const [tags, setTags] = useState([]);
+  const [clearTags, setClearTags] = useState(null);
+
+  const propagateClearTags = cbFunction => {
+    setClearTags(cbFunction);
+  }
 
   const onTagsChange = useCallback(tags => {
     setTags(tags);
@@ -25,7 +30,7 @@ export default function({ item = null }) {
     setEntryTopic('');
     setHardwareUsed('');
     setSampleType('');
-    setTags([]);
+    clearTags?.();
   }
 
   // const formClassName = `console-form-rest ${expanded && 'expanded'}`;
@@ -109,6 +114,7 @@ export default function({ item = null }) {
           </div>
           <div className="form-row">
             <Filters
+              propagateClearTags={propagateClearTags}
               onTagsChange={onTagsChange}
             />
           </div>
