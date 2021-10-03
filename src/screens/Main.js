@@ -25,6 +25,12 @@ export default function() {
         tagsAdded = true;
       }
 
+      if (tag?.text.indexOf('position:') === 0) {
+        const position = tag.text.substr(9);
+        queryParts.push(where('position', '==', position));
+        tagsAdded = true;
+      }
+
       if (tag?.text.indexOf('topic:') === 0) {
         const entryTopic = tag.text.substr(6);
         queryParts.push(where('entryTopic', '==', entryTopic));
@@ -89,7 +95,7 @@ export default function() {
           <div className="screen-main-content">
             <Filters
               onTagsChange={onTagsChange}
-              textExplanation="Available filters: console, topic, hardware, sample, tag. For example, filter by &quot;hardware:hammer&quot;"
+              textExplanation="Available filters: console, hardware, position, sample, tag, topic. For example, filter by &quot;hardware:hammer&quot; or &quot;position:FS&quot;"
             />
             <ConsoleLog logs={logs} />
           </div>
