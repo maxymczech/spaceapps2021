@@ -33,3 +33,15 @@
 .console-form-item {
   width: 100%;
 }
+
+.file-drop-area {
+  background-color: #fff;
+  border: 1px solid #c4c4da;
+  border-radius: 6px;
+  color: #c4c4da;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 30px;
+  text-align: center;
+  width: 100%;
+}

@@ -5,6 +5,7 @@
   left: 0;
   padding: 10px 15px;
   position: fixed;
+  z-index: 20;
   right: 0;
   top: 0;
   background-color: #2e3192;

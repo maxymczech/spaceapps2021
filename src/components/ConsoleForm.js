@@ -119,6 +119,12 @@ export default function({ item = null }) {
             />
           </div>
           <div className="form-row">
+            <div class="file-drop-area">
+              File Upload
+              {/* TODO */}
+            </div>
+          </div>
+          <div className="form-row">
             <div className="console-form-item">
               <div className="form-submit">
                 <button
