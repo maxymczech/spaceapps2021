@@ -1,6 +1,6 @@
 import './ConsoleForm.css';
 import React, { useCallback, useContext, useState } from 'react';
-import { addDoc, getFirestore } from "firebase/firestore"; 
+import { addDoc, collection, getFirestore, serverTimestamp } from "firebase/firestore"; 
 import Filters from './Filters';
 import { SessionContext } from '../contexts/Session';
 
@@ -12,9 +12,26 @@ export default function({ item = null }) {
   const [description, setDescription] = useState(item?.description ?? '');
   const [entryTopic, setEntryTopic] = useState(item?.entryTopic ?? '');
   const [hardwareUsed, setHardwareUsed] = useState(item?.hardwareUsed ?? '');
+  const [sampleType, setSampleType] = useState(item?.hardwareUsed ?? '');
   const [tags, setTags] = useState([]);
 
-  const handleSubmit = async e => {
+  const onTagsChange = useCallback(tags => {
+    setTags(tags);
+  }, []);
+
+  const clearForm = () => {
+    setErrorText('');
+    setDescription('');
+    setEntryTopic('');
+    setHardwareUsed('');
+    setSampleType('');
+    setTags([]);
+  }
+
+  // const formClassName = `console-form-rest ${expanded && 'expanded'}`;
+  const formClassName = `console-form-rest expanded`;
+
+  const handleSubmit = e => {
     e.preventDefault();
 
     if (description) {
@@ -24,8 +41,17 @@ export default function({ item = null }) {
         attachments: [],
         author: userRef,
         consoleSeat: userDetails.consoleSeat,
-        // dateCreated: 
+        dateCreated: serverTimestamp(),
+        dateEdited: null,
+        description,
+        entryTopic,
+        hardwareUsed,
+        officiallyApproved: false,
+        position: userDetails.position,
+        sampleType,
+        tags: (tags || []).filter(Boolean).map(tag => tag.text || '')
       }).then(docRef => {
+        clearForm();
       }, error => {
         setErrorText(error.code);
       }).finally(() => {
@@ -34,15 +60,10 @@ export default function({ item = null }) {
     }
   }
 
-  const onTagsChange = useCallback(tags => {
-    setTags(tags);
-  }, []);
-
-  const formClassName = `console-form-rest ${expanded && 'expanded'}`;
-
   return (
     <div className="console-form">
       <form onSubmit={handleSubmit}>
+        <h2>Create New Log</h2>
         <div className="form-row">
           <textarea
             id="log-description"
@@ -77,6 +98,16 @@ export default function({ item = null }) {
             />
           </div>
           <div className="form-row">
+            <label htmlFor="log-sample-type">Sample Type:</label>
+            <input
+              autoComplete="on"
+              id="log-sample-type"
+              onChange={e => setSampleType(e.target.value)}
+              type="text"
+              value={sampleType}
+            />
+          </div>
+          <div className="form-row">
             <Filters
               onTagsChange={onTagsChange}
             />
@@ -84,8 +115,14 @@ export default function({ item = null }) {
           <div className="form-row">
             <div className="console-form-item">
               <div className="form-submit">
-                <button type="submit">Save</button>
-                <a
+                <button
+                  disabled={loading}
+                  type="submit"
+                >
+                  Save
+                </button>
+
+                {/* <a
                   href="#"
                   onClick={e => {
                     e?.preventDefault?.();
@@ -93,7 +130,7 @@ export default function({ item = null }) {
                   }}
                 >
                   Hide Form
-                </a>
+                </a> */}
               </div>
             </div>
           </div>

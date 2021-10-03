@@ -5,6 +5,7 @@ import ConsoleForm from '../components/ConsoleForm';
 import ConsoleLog from '../components/ConsoleLog';
 import Filters from '../components/Filters';
 import NavBar from '../components/NavBar';
+import scrollLogToBottom from '../utils/scroll-log-to-bottom';
 
 export default function() {
   const [logs, setLogs] = useState([]);
@@ -30,6 +31,7 @@ export default function() {
         });
       });
       setLogs(logs);
+      scrollLogToBottom();
     });
 
     return () => {
