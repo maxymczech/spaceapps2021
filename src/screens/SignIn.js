@@ -3,9 +3,9 @@ import React, { useContext, useState } from 'react';
 import { SessionContext } from '../contexts/Session';
 
 export default function() {
-  const [errorText, setErrorText] = useState('fd@test.com');
-  const [userEmail, setUserEmail] = useState('password');
-  const [userPassword, setUserPassword] = useState('');
+  const [errorText, setErrorText] = useState('');
+  const [userEmail, setUserEmail] = useState('fd@test.com');
+  const [userPassword, setUserPassword] = useState('password');
   const { signIn } = useContext(SessionContext);
 
   const handleSubmit = e => {
