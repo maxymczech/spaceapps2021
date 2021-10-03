@@ -1,3 +1,7 @@
+.console-filter {
+  width: 100%;
+}
+
 .ReactTags__tags {
   border: 1px solid #2e3192;
   padding: 7px 7px 0 7px;
@@ -38,6 +42,7 @@
   font-size: 14px;
   display: flex;
   align-items: center;
+  min-height: 35px;
 }
 .ReactTags__remove {
   border: none;

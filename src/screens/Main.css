@@ -3,3 +3,21 @@
   flex-direction: column;
   height: 100vh;
 }
+
+.screen-main-columns {
+  display: flex;
+  flex-grow: 1;
+  height: calc(100vh - 60px);
+}
+
+.screen-main-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 15px;
+}
+
+.screen-main-sidebar {
+  padding: 15px;
+  width: 400px;
+}

@@ -45,9 +45,18 @@ export default function() {
     <>
       <div className="screen-main">
         <NavBar />
-        <Filters onTagsChange={onTagsChange} />
-        <ConsoleLog logs={logs} />
-        <ConsoleForm />
+        <div className="screen-main-columns">
+          <div className="screen-main-content">
+            <Filters
+              textExplanation="Available filters: author, console, topic, hardware, sample, tag. For example, filter by &quot;hardware:hammer&quot;"
+              onTagsChange={onTagsChange}
+            />
+            <ConsoleLog logs={logs} />
+          </div>
+          <div className="screen-main-sidebar">
+            <ConsoleForm />
+          </div>
+        </div>
       </div>
     </>
   );

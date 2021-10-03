@@ -2,7 +2,7 @@ import './Filters.css';
 import React, { useEffect, useState } from 'react';
 import { WithContext as ReactTags } from 'react-tag-input';
 
-export default function({ onTagsChange }) {
+export default function({ onTagsChange, textExplanation = '' }) {
   const [tags, setTags] = useState([]);
   const [suggestions, setSuggestions] = useState([]);
 
@@ -28,6 +28,9 @@ export default function({ onTagsChange }) {
         suggestions={suggestions}
         tags={tags}
       />
+      {textExplanation && <div className="text-explanation">
+        {textExplanation}
+      </div>}
     </div>
   );
 }
