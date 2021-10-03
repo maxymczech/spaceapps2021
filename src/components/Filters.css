@@ -1,3 +1,23 @@
+.ReactTags__tags {
+  border: 1px solid #2e3192;
+  padding: 7px 7px 0 7px;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.ReactTags__tag {
+  margin-right: 5px;
+  border: 1px solid #c4c4da;
+  background: #e2e2eb;
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin-right: 7px;
+  margin-bottom: 7px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
 .ReactTags__selected {
   display: flex;
   flex-wrap: wrap;
@@ -5,8 +25,34 @@
 
 .ReactTags__tagInput {
   flex-grow: 1;
+  display: flex;
+  padding-bottom: 5px;
+  font-size: 17px;
 }
 
 .ReactTags__tagInputField {
   width: 100%;
+  border: none;
+  padding: 0;
+  outline: none;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+.ReactTags__remove {
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  height: 20px;
+  width: 20px;
+  font-size: 0;
+  background-image: url(./images/close.svg);
+  margin-left: 8px;
+  position: relative;
+  top: 0;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.ReactTags__remove:hover {
+  opacity: 0.6;
 }
