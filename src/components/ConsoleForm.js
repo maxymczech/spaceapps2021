@@ -119,7 +119,7 @@ export default function({ item = null }) {
             />
           </div>
           <div className="form-row">
-            <div class="file-drop-area">
+            <div className="file-drop-area">
               File Upload
               {/* TODO */}
             </div>
