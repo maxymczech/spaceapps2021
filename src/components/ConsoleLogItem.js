@@ -96,7 +96,7 @@ export default function({ item }) {
             className="tag"
             key={tag}
           >
-            {tag}
+            #{tag}
           </div>
         ))}
       </div>

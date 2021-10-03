@@ -1,7 +1,7 @@
 .console-log-item {
   background-color: whitesmoke;
   padding: 15px;
-  border-radius: 10px;
+  border-radius: 8px;
   position: relative;
 }
 
@@ -33,7 +33,7 @@
   left: 0;
   padding: 5px 15px 8px;
   background-color: whitesmoke;
-  border-radius: 6px 6px 0 0;
+  border-radius: 8px 8px 0 0;
   font-weight: 600;
   font-size: 17px;
 }
@@ -54,7 +54,7 @@
 }
 .console-log-item-buttons button:first-child {
   border: none;
-  border: 1x solid #2e3192;
+  border: 1px solid #2e3192;
   background-color: #2e3192;
   color: white;
   border-radius: 6px;
@@ -68,11 +68,10 @@
 .console-log-item-buttons button:first-child:hover {
   background-color: white;
   color: #2e3192;
-  border: 1x solid #2e3192;
 }
 .console-log-item-buttons button:nth-child(2) {
   border: none;
-  border: 1x solid #9e0b0f;
+  border: 1px solid #9e0b0f;
   background-color: #9e0b0f;
   color: white;
   border-radius: 6px;
@@ -86,12 +85,11 @@
 .console-log-item-buttons button:nth-child(2):hover {
    background-color: white;
    color: #9e0b0f;
-   border: 1x solid #9e0b0f;
  }
  .console-log-item-buttons button:last-child {
   border: none;
-  border: 1x solid #00a651;
-  background-color: #00a651;
+  border: 1px solid #24d03c;
+  background-color: #24d03c;
   color: white;
   border-radius: 6px;
   padding: 5px 25px;
@@ -103,6 +101,18 @@
 }
 .console-log-item-buttons button:last-child:hover {
   background-color: white;
-  color: #00a651;
-  border: 1x solid #00a651;
+  color: #24d03c;
+}
+.console-log-item-tags {
+  display: flex;
+  padding: 20px 0 30px;
+}
+.console-log-item-tags .tag {
+  margin-bottom: 5px;
+  border: 1px solid #c4c4da;
+  background: #e2e2eb;
+  border-radius: 6px;
+  margin-right: 7px;
+  margin-bottom: 7px;
+  padding: 4px 8px;
 }
