@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 1000 1000"
+   enable-background="new 0 0 1000 1000"
+   xml:space="preserve"
+   id="svg8"
+   sodipodi:docname="close.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"><metadata
+   id="metadata14"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+   id="defs12" /><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="881"
+   inkscape:window-height="574"
+   id="namedview10"
+   showgrid="false"
+   inkscape:zoom="0.236"
+   inkscape:cx="500"
+   inkscape:cy="500"
+   inkscape:window-x="0"
+   inkscape:window-y="0"
+   inkscape:window-maximized="0"
+   inkscape:current-layer="g6" />
+<g
+   id="g6"><path
+     d="M500,990C229.8,990,10,770.2,10,500S229.8,10,500,10s490,219.8,490,490S770.2,990,500,990z M500,80.3C268.6,80.3,80.3,268.6,80.3,500c0,231.4,188.3,419.7,419.7,419.7c231.4,0,419.7-188.3,419.7-419.7C919.7,268.6,731.4,80.3,500,80.3z"
+     id="path2"
+     style="fill:#2e3192;fill-opacity:1" /><path
+     d="M549.3,501.5l151.3-149.7c13.8-13.6,13.9-35.7,0.3-49.5c-13.6-13.8-35.8-13.9-49.5-0.3L499.9,451.9L350.6,302.2c-13.7-13.7-35.8-13.8-49.5-0.1c-13.7,13.6-13.7,35.8-0.1,49.5l149,149.5L299.8,649.8c-13.8,13.6-13.9,35.7-0.3,49.5c6.9,6.9,15.9,10.4,24.9,10.4c8.9,0,17.8-3.4,24.6-10.1l150.5-148.8l151.7,152.2c6.8,6.9,15.8,10.3,24.8,10.3c9,0,17.9-3.4,24.7-10.2c13.7-13.7,13.7-35.8,0.1-49.5L549.3,501.5z"
+     id="path4"
+     style="fill:#2e3192;fill-opacity:1;stroke:none" /></g>
+</svg>

@@ -28,7 +28,7 @@ body {
 }
 
 .modal {
-  background-color: #fff;
+  background-color: #e2e2eb;
   border-radius: 10px;
   left: 50%;
   max-height: calc(100vh - 30px);
@@ -37,16 +37,45 @@ body {
   position: fixed;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 800px;
+  width: 500px;
   z-index: 110;
+  padding: 8px 30px 35px;
 }
 
 .modal .btn-close {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 30px;
+  right: 25px;
+  background-image: url(./images/close.svg);
+  height: 30px;
+  width: 30px;
+  font-size: 0;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  background-color: transparent;
 }
-
+.modal .btn-close:hover {
+  opacity: 0.6;
+}
+.modal .form-row label {
+  min-width: 11em;
+  font-weight: 700;
+}
+.modal .form-row select {
+  border: none;
+  padding: 7px;
+  border-radius: 6px;
+  height: 31px;
+  width: 250px;
+}
+.modal .form-row input {
+  width: 250px;
+}
+.modal h2 {
+  border-bottom: 1px dashed #2e3192;
+  padding-bottom: 15px;
+}
 .flex-grow {
   flex-grow: 1;
 }

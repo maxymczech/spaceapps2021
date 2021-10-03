@@ -7,6 +7,8 @@
   position: fixed;
   right: 0;
   top: 0;
+  background-color: #2e3192;
+  color: white;
 }
 
 .nav-bar-instead {
@@ -14,9 +16,23 @@
   height: 60px;
 }
 
-.nav-bar .btn-user-settings {
+.nav-bar .btn-user-settings,
+.nav-bar .btn-sign-out {
+  background-color: white;
+  border: none;
+  padding: 6px 15px;
+  border-radius: 6px;
+  margin-right: 20px;
+  font-size: 15px;
+  width: 100px;
+  cursor: pointer;
 }
 
 .nav-bar-item {
-  margin-right: 15px;
+  margin-right: 50px;
+}
+.user-info-label {
+  font-weight: 700;
+  font-size: 18px;
+  margin-right: 8px;
 }

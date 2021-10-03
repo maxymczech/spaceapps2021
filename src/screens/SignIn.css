@@ -21,9 +21,9 @@
   height: 200px;
   width: 200px;
   margin-bottom: 50px;
-  margin-left: 10px;
+  margin-left: 5px;
   position: absolute;
-  top: 50px;
+  top: 30px;
   left: calc(50% - 100px);
 }
 

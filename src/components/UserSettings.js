@@ -31,7 +31,7 @@ export default function({ onClose }) {
   return (
     <>
       <div className="modal">
-        <h2>User Settings</h2>
+        <h2>Personal Information</h2>
         <button
           className="btn-close"
           onClick={() => onClose?.()}
@@ -80,6 +80,22 @@ export default function({ onClose }) {
                   {`${id} - ${config.app.flightControlPositions[id]}`}
                 </option>
               ))}
+            </select>
+          </div>
+          <h2>User Settings</h2>
+          <div className="form-row">
+            <label htmlFor="fontsize">Font size:</label>
+            <select name="fontsize">
+              <option value="f1" selected>normal</option>
+              <option value="f2">smaller</option>
+              <option value="f3">larger</option>
+            </select>
+          </div>
+          <div className="form-row">
+            <label htmlFor="themesettings">Theme settings:</label>
+            <select name="themesettings">
+              <option value="f1" selected>light</option>
+              <option value="f2">dark</option>
             </select>
           </div>
           <div className="form-submit">
