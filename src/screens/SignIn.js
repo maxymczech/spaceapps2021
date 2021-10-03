@@ -3,8 +3,8 @@ import React, { useContext, useState } from 'react';
 import { SessionContext } from '../contexts/Session';
 
 export default function() {
-  const [errorText, setErrorText] = useState('');
-  const [userEmail, setUserEmail] = useState('');
+  const [errorText, setErrorText] = useState('fd@test.com');
+  const [userEmail, setUserEmail] = useState('password');
   const [userPassword, setUserPassword] = useState('');
   const { signIn } = useContext(SessionContext);
 
